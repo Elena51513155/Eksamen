@@ -15,3 +15,8 @@ function calculateAge(birthYear) {
 }
 var ageUser1 = calculateAge(birthYear);
 var ageUser2 = calculateAge(birthYear);
+
+
+module.exports = {
+    User : User
+  }
