@@ -3,7 +3,7 @@ const server = express();
 const PORT = process.env.port || 4000;
 
 //API
-const User = require('../Client/model/class')
+/*const User = require('../Client/model/class')
 
 server.post("/class", (req, res) => {
  res.json(user[0], "Match has been created")
@@ -22,8 +22,9 @@ server.put("/class", (req, res) => {
 
 server.delete("/class", (req, res) => {
  res.json(user[0], "Match has been deleted")
-});
+});*/
 
-server.listen(PORT, () => {
+server.listen(PORT)
     console.log(`Server-applikation lytter på http://localhost:${PORT}`)
-  })
+  
+
