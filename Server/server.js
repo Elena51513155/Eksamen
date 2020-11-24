@@ -3,24 +3,24 @@ const server = express();
 const PORT = process.env.port || 4000;
 
 //API
-const User = require('../Client/model/class.js')
+const User = require('../Client/model/class')
 
-server.post("/class.js", (req, res) => {
+server.post("/class", (req, res) => {
  res.json(user[0], "Match has been created")
 });
 
 
-server.get("/class.js", (req, res) => {
+server.get("/class", (req, res) => {
  res.json(user[0])
 });
 
 
-server.put("/class.js", (req, res) => {
+server.put("/class", (req, res) => {
  res.json(user[0], "Match has been updated")
 });
 
 
-server.delete("/class.js", (req, res) => {
+server.delete("/class", (req, res) => {
  res.json(user[0], "Match has been deleted")
 });
 

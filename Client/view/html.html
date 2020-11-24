@@ -1,23 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width">
-        <meta http-equiv="X-UA-Compatible" content="ie=ed">
-        <link rel="stylesheet" href="CSS.css">
-        <title>LS</title>
-
+        <title>Sign Up and Login </title>
     </head>
     <body>
+        <form id="register-form"> 
+            <p>Sign Up:</p>
+            <label for = "name1">Enter Fullname:</label>
+            <input id="name1" type="text" placeholder="Fullname" value=""/>
+                <br></br>
+            <label for = "pw">Enter Password:</label>
+            <input id="pw" type="password" placeholder="Password" value=""/>
+                 <br></br>
+            <label for="email">Enter email:</label>
+            <input id="email" type="email" placeholder="abc@mail.dk">
+                 <br></br>
+            <label for="Birthday">Enter Birthday: </label>
+            <input type="date" id="birthday">
+                <br></br>
+            <p>Select your gender:</p>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="other" id="other">
+                <label for="other">Other</label>
+                    <br></br>
+             <p>Select your interest:</p>
+                <input type="radio" name="interest" value="Female" id="Female">
+                <label for="Female">Female</label>
+                <input type="radio" name="interest" value="Male" id="Male">
+                <label for="Male">Male</label>
+                <input type="radio" name="interest" value="Other" id="Other">
+                <label for="Other">Other</label>
+                    <br></br>
+            
 
-    <div class="container">
-        <form>
-        <input class="storage" type="text">
-        <p class="text">Text</p>
-        <button class="button">Save</button>
-    </div>
-</form>
-<script src="js.js"></script>
-</body>
+            <input id="rgstr_btn" type="submit" value="Submit account" onClick="store()"/> 
+            <br></br>
+        </form>
 
+        <form id="login-form"> 
+            <p>Login:</p>
+            <input id="userName" type="text" placeholder="Enter Username" value=""/>
+                <br></br>
+            <input id="userPw" type="password" placeholder="Enter Password" value=""/>
+                <br></br>
+            <input id="login_btn" type="submit" value="Login" onClick="check()"/> 
+       </form>
+
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/storage /localStorage.js"></script>
+
+    </body>
 </html>
