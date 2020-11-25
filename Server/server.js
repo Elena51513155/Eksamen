@@ -7,10 +7,8 @@ var path = require('path');
 const { allowedNodeEnvironmentFlags } = require('process');
 const { request } = require('express');
 //1 var mysql = require('mysql'); //
+//2 myStorage = window.localStorage;
 
-//API
-/*const User = require('../Client/model/class')
-*/
 
 app.use(session({
     secret: 'secret',
@@ -30,20 +28,48 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname + '../../Client/view/login.html'));
 });
 
+/*måske skal vi have UPDATE ind her, når personen er logget ind, kunne det se sådan her ud:
+app.put("/login":id", (req, res) => {
+    readFile(data => {
+        //add the new user
+         const userId = req.params["id"];
+        data[userId] = req.body;
+
+        writeFile(JSON.stringify(data, null, 2), () => {
+        res.status(200).send("user id:${userId} updates");
+     })
+   })
+}) Evt json filer med user 
+
+// DELETE
+app.delete('/users/:id', (req, res) => {
+  readFile(data => {
+    // add the new user
+    const userId = req.params['id'];
+    delete data[userId];
+
+    writeFile(JSON.stringify(data, null, 2), () => {
+      res.status(200).send(`users id:${userId} removed`);
+    });
+  }, true);
+}); */
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + '../../Client/view/register.html'));
 });
 
 app.post("/register-user", (req, res) => {
 
-    var username = req.body.name1;
+    var username = req.body.username;
     var password = req.body.pw;
 
     /* Make database call here where you store the user - do this in MySQL */
 
     // setItem here
 
-    //localStorage.setItem("username", username);
+//2 window.localStorage.setItem("username", username); // sidste er en DOM key + DOM value
+//Men i opgaven skal vi kun gemme log.in status i locale storage (klient side)
+
 
     /* Check if user exist */
     
@@ -60,15 +86,6 @@ app.get('/profile', function(req, res) {
     }
 });
 
-/*
-server.put("/class", (req, res) => {
- res.json(user[0], "Match has been updated")
-});
-
-
-server.delete("/class", (req, res) => {
- res.json(user[0], "Match has been deleted")
-});*/
 
 app.listen(PORT)
     console.log(`Server-applikation lytter på http://localhost:${PORT}`)
