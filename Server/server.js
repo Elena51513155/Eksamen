@@ -61,9 +61,10 @@ app.get("/", (req, res) => {
 app.post("/register-user", (req, res) => {
 
     var username = req.body.username;
-    var password = req.body.pw;
+    var password = req.body.password;
 
-    /* Make database call here where you store the user - do this in MySQL, jeg mener vi skal store som json filer,
+    /* Make database call here where you store the user - do this in MySQL,
+    jeg mener vi skal store som json filer,
     i opgaven står  */
 
     // setItem here
