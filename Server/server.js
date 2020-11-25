@@ -63,7 +63,8 @@ app.post("/register-user", (req, res) => {
     var username = req.body.username;
     var password = req.body.pw;
 
-    /* Make database call here where you store the user - do this in MySQL */
+    /* Make database call here where you store the user - do this in MySQL, jeg mener vi skal store som json filer,
+    i opgaven står  */
 
     // setItem here
 
@@ -85,7 +86,13 @@ app.get('/profile', function(req, res) {
         res.send('Please log in');
     }
 });
-
+/*Evt nedestående til log-out, kobles op til en log-out knap på profile side
+ændrer session status i local storage til: logged out
+app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+  });
+  */
 
 app.listen(PORT)
     console.log(`Server-applikation lytter på http://localhost:${PORT}`)
